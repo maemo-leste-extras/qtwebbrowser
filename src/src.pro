@@ -6,11 +6,13 @@ CONFIG -= app_bundle
 SOURCES = \
     appengine.cpp \
     main.cpp \
+    mceinputmethodfilter.cpp \
     navigationhistoryproxymodel.cpp \
     touchtracker.cpp
 
 HEADERS = \
     appengine.h \
+    mceinputmethodfilter.h \
     navigationhistoryproxymodel.h \
     touchtracker.h \
 
@@ -28,7 +30,7 @@ OTHER_FILES = \
     qml/Keyboard.qml \
     qml/Window.qml
 
-QT += qml quick webengine
+QT += qml quick webengine dbus
 
 RESOURCES += resources.qrc
 

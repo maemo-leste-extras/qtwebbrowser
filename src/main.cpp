@@ -38,12 +38,23 @@
 #include <QtWebEngine/qtwebengineglobal.h>
 #include <mceinputmethodfilter.h>
 
+QGuiApplication *appG;
+
 static QObject *engine_factory(QQmlEngine *engine, QJSEngine *scriptEngine)
 {
     Q_UNUSED(engine);
     Q_UNUSED(scriptEngine);
     AppEngine *eng = new AppEngine();
     return eng;
+}
+
+static QObject *create_static_mce_input_method_filter(QQmlEngine *engine, QJSEngine *scriptEngine)
+{
+    Q_UNUSED(engine);
+    Q_UNUSED(scriptEngine);
+
+    MceInputMethodFilter *mce = new MceInputMethodFilter(appG->inputMethod());
+    return mce;
 }
 
 int main(int argc, char **argv)
@@ -68,10 +79,12 @@ int main(int argc, char **argv)
 
     int qAppArgCount = qargv.size();
 
-	QGuiApplication app(qAppArgCount, qargv.data());
+    QGuiApplication app(qAppArgCount, qargv.data());
+    appG = &app;
 
     qmlRegisterType<NavigationHistoryProxyModel>("WebBrowser", 1, 0, "SearchProxyModel");
-	qmlRegisterType<MceInputMethodFilter>("WebBrowser", 1, 0, "MceInputMethodFilter");
+    qmlRegisterSingletonType<MceInputMethodFilter>("WebBrowser", 1, 0, "MceInputMethodFilter", create_static_mce_input_method_filter);
+    qmlRegisterType<TouchTracker>("WebBrowser", 1, 0, "TouchTracker");
     qmlRegisterSingletonType<AppEngine>("WebBrowser", 1, 0, "AppEngine", engine_factory);
 
     QtWebEngine::initialize();
