@@ -31,15 +31,12 @@
 #include "navigationhistoryproxymodel.h"
 #include "touchtracker.h"
 
-#if defined(DESKTOP_BUILD)
-#include "touchmockingapplication.h"
-#endif
-
 #include <QGuiApplication>
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QQuickView>
 #include <QtWebEngine/qtwebengineglobal.h>
+#include <mceinputmethodfilter.h>
 
 static QObject *engine_factory(QQmlEngine *engine, QJSEngine *scriptEngine)
 {
@@ -71,14 +68,10 @@ int main(int argc, char **argv)
 
     int qAppArgCount = qargv.size();
 
-#if defined(DESKTOP_BUILD)
-    TouchMockingApplication app(qAppArgCount, qargv.data());
-#else
-    QGuiApplication app(qAppArgCount, qargv.data());
-#endif
+	QGuiApplication app(qAppArgCount, qargv.data());
 
     qmlRegisterType<NavigationHistoryProxyModel>("WebBrowser", 1, 0, "SearchProxyModel");
-    qmlRegisterType<TouchTracker>("WebBrowser", 1, 0, "TouchTracker");
+	qmlRegisterType<MceInputMethodFilter>("WebBrowser", 1, 0, "MceInputMethodFilter");
     qmlRegisterSingletonType<AppEngine>("WebBrowser", 1, 0, "AppEngine", engine_factory);
 
     QtWebEngine::initialize();
