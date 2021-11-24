@@ -29,6 +29,7 @@
 
 import QtQuick 2.5
 import QtQuick.VirtualKeyboard 2.0
+import WebBrowser 1.0
 
 InputPanel {
     id: inputPanel
@@ -42,7 +43,7 @@ InputPanel {
     }
     states: State {
         name: "visible"
-        when: Qt.inputMethod.visible
+        when: MceInputMethodFilter.showIm
         PropertyChanges {
             target: inputPanel
             y: windowHeight - inputPanel.height

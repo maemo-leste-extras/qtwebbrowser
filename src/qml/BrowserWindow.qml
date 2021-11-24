@@ -49,7 +49,7 @@ Item {
 
     property string googleSearchQuery: "https://www.google.com/search?sourceid=qtbrowser&ie=UTF-8&q="
 
-    property int toolBarSize: 80
+    property int toolBarSize: 60
     property string uiColor: settingsView.privateBrowsingEnabled ? "#26282a" : "#46a2da"
     property string uiSeparatorColor: settingsView.privateBrowsingEnabled ? "#717273" : "#7ebee5"
     property string toolBarSeparatorColor: settingsView.privateBrowsingEnabled ? "#929495" : "#a3d1ed"
