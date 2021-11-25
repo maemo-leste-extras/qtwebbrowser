@@ -34,16 +34,9 @@ QT += qml quick webengine dbus
 
 RESOURCES += resources.qrc
 
-!cross_compile {
-    DEFINES += DESKTOP_BUILD
-    SOURCES += touchmockingapplication.cpp
-    HEADERS += touchmockingapplication.h
-    QT += gui-private
-    isEmpty(INSTALL_PREFIX): INSTALL_PREFIX=/usr/local/bin
-} else {
-    # Path for Qt for Device Creation
-    isEmpty(INSTALL_PREFIX): INSTALL_PREFIX=/data/user/qt/qtwebbrowser-app
-}
+DEFINES += DESKTOP_BUILD
+QT += gui-private
+isEmpty(INSTALL_PREFIX): INSTALL_PREFIX=/usr/bin
 
 target.path = $$INSTALL_PREFIX
 INSTALLS += target
