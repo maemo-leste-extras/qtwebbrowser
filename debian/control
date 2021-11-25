@@ -6,7 +6,8 @@ Build-Depends:
  debhelper,
  qt5-qmake,
  qt5-default,
- libqt5webview5-dev
+ libqt5webview5-dev,
+ qtwebengine5-dev
 Standards-Version: 3.7.2
 
 Package: qtwebbrowser
@@ -15,10 +16,13 @@ Multi-arch: same
 Depends:
  libqt5gui5,
  libqt5core5a,
- qml-module-qtquick-controls2,
- qml-module-qtwebview,
  ${shlibs:Depends},
  ${misc:Depends},
+ qml-module-qtquick-controls2,
+ qml-module-qtwebview,
+ qml-module-qtquick-virtualkeyboard,
+ qml-module-qtquick-dialogs,
+ qml-module-qtquick-layouts
 Description: A touch frendly Webbrowseer
 XB-Maemo-Display-Name: QTWebBrowser
 XB-Maemo-Icon-26: iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAANIXpUWHRSYXcgcHJvZmlsZSB0eXBl
