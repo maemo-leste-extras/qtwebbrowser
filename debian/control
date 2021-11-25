@@ -24,7 +24,7 @@ Depends:
  qml-module-qtquick-dialogs,
  qml-module-qtquick-layouts,
  qml-module-qtwebengine
-Description: A touch frendly Webbrowseer
+Description: A touch frendly Web Browser
 XB-Maemo-Display-Name: QTWebBrowser
 XB-Maemo-Icon-26: iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAANIXpUWHRSYXcgcHJvZmlsZSB0eXBl
  IGV4aWYAAHja7ZlpkuO6EYT/4xQ+AvblOFgjfAMf318BoFq9zPO8GId/uTXdkkgQBCqzsrI4av7r
