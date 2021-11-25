@@ -23,7 +23,10 @@ Depends:
  qml-module-qtquick-virtualkeyboard,
  qml-module-qtquick-dialogs,
  qml-module-qtquick-layouts,
- qml-module-qtwebengine
+ qml-module-qtwebengine,
+ qml-module-qt-labs-folderlistmodel,
+ qtvirtualkeyboard-plugin,
+ qml-module-qt-labs-settings,
 Description: A touch frendly Web Browser
 XB-Maemo-Display-Name: QTWebBrowser
 XB-Maemo-Icon-26: iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAANIXpUWHRSYXcgcHJvZmlsZSB0eXBl
