@@ -1,3 +1,9 @@
+qtwebbrowser (5.11.2) unstable; urgency=medium
+
+  * Fix portrait support to also support landscape
+
+ -- Merlijn Wajer <merlijn@wizzup.org>  Sun, 08 Jan 2023 14:10:09 +0100
+
 qtwebbrowser (5.11.1) unstable; urgency=medium
 
   * Add support for portrait mode
