@@ -109,6 +109,7 @@ int main(int argc, char **argv)
 #else
     view.showFullScreen();
 #endif
+    view.setProperty("X-Maemo-Orientation", 1);
 
     app.exec();
 }
