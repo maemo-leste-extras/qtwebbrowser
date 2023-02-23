@@ -48,6 +48,7 @@ Item {
     }
 
     property string googleSearchQuery: "https://www.google.com/search?sourceid=qtbrowser&ie=UTF-8&q="
+    property string ddgSearchQuery: "https://duckduckgo.com/?t=ffab&q="
 
     property int toolBarSize: 60
     property string uiColor: settingsView.privateBrowsingEnabled ? "#26282a" : "#46a2da"
@@ -393,7 +394,7 @@ Item {
                         if (AppEngine.isUrl(string)) {
                             constructedUrl = AppEngine.fromUserInput(string)
                         } else {
-                            constructedUrl = AppEngine.fromUserInput(googleSearchQuery + string)
+                            constructedUrl = AppEngine.fromUserInput(ddgSearchQuery + string)
                         }
                         navigation.webView.url = constructedUrl
                         navigation.webView.forceActiveFocus()
